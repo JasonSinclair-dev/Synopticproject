@@ -32,6 +32,7 @@ public class StorageService {
                 )
                 .build();
     }
+//    Lists the object keys as a list of strings in the console
     public List<String> getSongFileNames(){
 
         ListObjectsV2Result result = space.listObjectsV2("musicarchivejason");
@@ -45,7 +46,7 @@ public class StorageService {
 //                    System.out.println(s3ObjectSummary.toString());
 //                });
     }
-
+//    Upload files to the storage space3bucket
     public void uploadSong(MultipartFile file) throws IOException {
             ObjectMetadata objectMetadata = new ObjectMetadata();
             objectMetadata.setContentType(file.getContentType());

@@ -17,7 +17,7 @@ public class MusicArchiveBackendApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(MusicArchiveBackendApplication .class, args);
-
+//        storageService.getSongFileNames();
         StorageService storageService = context.getBean(StorageService.class);
 
         System.out.println(storageService.getSongFileNames());

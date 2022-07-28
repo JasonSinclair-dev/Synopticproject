@@ -1,21 +1,26 @@
 package me.jasonsinclair.musicarchivebackend;
 
+import me.jasonsinclair.musicarchivebackend.services.StorageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.ApplicationContext;
+
 
 @SpringBootApplication
-public class MusicArchiveBackendApplication extends SpringBootServletInitializer {
+public class MusicArchiveBackendApplication {
+//        extends SpringBootServletInitializer {
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(MusicArchiveBackendApplication .class);
-    }
+//    @Autowired
+//    private static StorageService storageService;
 
     public static void main(String[] args) {
-        SpringApplication.run(MusicArchiveBackendApplication .class, args);
+        ApplicationContext context = SpringApplication.run(MusicArchiveBackendApplication .class, args);
+
+        StorageService storageService = context.getBean(StorageService.class);
+
+        System.out.println(storageService.getSongFileNames());
     }
 
 }

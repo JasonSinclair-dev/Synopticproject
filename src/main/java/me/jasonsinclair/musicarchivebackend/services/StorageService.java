@@ -22,7 +22,7 @@ public class StorageService {
     public StorageService(){
 
         AWSCredentialsProvider awsCredentialsProvider = new AWSStaticCredentialsProvider(
-                new BasicAWSCredentials("DO004KG8BFNVN8JRKV6Z", "5buK/MlCB/XakDvLi1P/ymOEx8FDlweK9p3qYMzCXOc")
+                new BasicAWSCredentials("DO00EDTZCRD2N67V3V6W", "CzCA0MyYwrhBj/07brLbD1r454ucckzGjaAEX7P642Q")
         );
         space = AmazonS3ClientBuilder
                 .standard()

@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Optional;
 
+//HTTP req routed to index controller, Index controller passes to get homepage method.
 @Controller
 public class IndexController {
 
@@ -23,6 +24,8 @@ public class IndexController {
         this.storageService = storageService;
     }
 
+
+//    Take all song filenames from SS and put into the model. Model sent to HTML index View.
     @GetMapping
     public String getHomepage(Model model){
 //        MVC - Model,View, Controller
@@ -30,12 +33,12 @@ public class IndexController {
         model.addAttribute("songFileNames", storageService.getSongFileNames());
         return "index";
     }
-
+//post request for the song to be uploaded, takes file and encases in multipart file object
     @PostMapping
     public String handleFileUpload(@RequestParam("file")MultipartFile file) throws IOException {
-
+//sends file object to SService
         storageService.uploadSong(file);
-
+//to Homepage/index
         return "redirect:/";
     }
 

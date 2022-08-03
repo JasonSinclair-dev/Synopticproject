@@ -6,20 +6,22 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-800">
-
+<!--page styling-->
 <div class="mx-auto w-6/12">
     <div class ="text-center m-20 py-3 px-2">
         <h1 class="text-6xl font-extrabold text-white pb-4"> Music Player</h1>
         <img class="rounded-2xl mx-auto" src = "https://media1.tenor.com/images/4d5fdb6c20630ca254865fd9ba781bd2/tenor.gif?itemid=14460643" alt=""/>
         <div>
+<!--            form element for file upload feature-->
             <form method ="POST" ENCTYPE= "multipart/form-data" action="/">
                 <label class = "mx-2 text-white">File to Upload:</label>
+<!--                Button styling and Hover styling-->
                 <input name= "file" class="bg-black ring-1 ring-gray-800 text-white font-medium p-1 rounded-xl" type="file" />
                 <button class="bg-black ring-1 ring-gray-800 text-white font-medium p-1 my-2 text-2xl rounded-xl hover:bg-white hover:text-black" type="submit" >Upload File</button>
             </form>
         </div>
     </div>
-
+<!--styling and table element-->
         <div class="mt-8 flex flex-col">
             <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -48,7 +50,6 @@
                                     </audio>
                                 </td>
                             </tr>
-                            <!-- More people... -->
                             </tbody>
                         </table>
                     </div>
